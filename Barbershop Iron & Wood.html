@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRON & WOOD // Мужской Барбершоп</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#111111',
+            brandBrown: '#2a1f1a',
+            brandBrownLight: '#3e2b23',
+            brandGold: '#d4af37',
+            brandGoldHover: '#e2c07d',
+            brandText: '#f5f5f0',
+            brandMuted: '#a89f91',
+            brandBorder: '#382e28'
+          },
+          fontFamily: {
+            heading: ['Oswald', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #111111;
+      color: #f5f5f0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Subtle background texture overlay */
+    .bg-texture {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #111111;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a1f1a;
+      border: 1px solid #382e28;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+  </style>
+</head>
+<body class="bg-brandDark text-brandText flex flex-col min-h-screen selection:bg-brandGold selection:text-black">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-brandDark/90 backdrop-blur-md border-b border-brandBorder transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="font-heading text-2xl sm:text-3xl font-bold tracking-wider text-brandText hover:text-brandGold transition-colors uppercase">
+        IRON & WOOD<span class="text-brandGold">.</span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm uppercase font-medium tracking-widest text-brandMuted">
+        <a href="#services" class="hover:text-brandGold transition-colors">Услуги</a>
+        <a href="#masters" class="hover:text-brandGold transition-colors">Мастера</a>
+        <a href="#booking" class="hover:text-brandGold transition-colors">Запись</a>
+        <a href="#contacts" class="hover:text-brandGold transition-colors">Контакты</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="#booking" class="inline-flex items-center justify-center bg-brandGold text-black font-heading font-semibold text-sm uppercase px-5 py-2.5 rounded-none hover:bg-brandGoldHover transition-colors border border-brandGold">
+        Записаться
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-20">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center border-b border-brandBorder bg-texture overflow-hidden px-4 sm:px-6 lg:px-8 py-20">
+      <div class="absolute inset-0 bg-gradient-to-r from-brandDark via-brandDark/90 to-brandBrown/30"></div>
+
+      <div class="max-w-7xl mx-auto w-full relative z-10">
+        <div class="max-w-3xl">
+          <div class="inline-block border border-brandGold/40 bg-brandBrown/50 px-3 py-1 mb-6">
+            <span class="text-brandGold font-mono text-xs uppercase tracking-widest font-medium">// ТРАДИЦИИ И СТИЛЬ</span>
+          </div>
+
+          <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-bold uppercase leading-none tracking-tight mb-6">
+            МУЖСКОЙ СТИЛЬ <br>
+            <span class="text-brandGold">БЕЗ КОМПРОМИССОВ</span>
+          </h1>
+
+          <p class="text-brandMuted text-lg sm:text-xl mb-10 max-w-2xl font-light leading-relaxed">
+            Стрижки, бритье и уход. Запишись онлайн за 2 минуты, без звонков и ожиданий.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#booking" class="inline-flex items-center justify-center bg-brandGold text-black font-heading font-bold text-base uppercase px-8 py-4 rounded-none hover:bg-brandGoldHover transition-all border border-brandGold">
+              Выбрать время
+              <i data-lucide="chevron-right" class="w-5 h-5 ml-2"></i>
+            </a>
+            <a href="#services" class="inline-flex items-center justify-center bg-brandBrown text-brandText font-heading font-medium text-base uppercase px-8 py-4 rounded-none hover:bg-brandBrownLight transition-colors border border-brandBorder">
+              Наши услуги
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="mb-14">
+        <span class="text-brandGold font-mono text-xs tracking-widest uppercase">// ПРАЙС-ЛИСТ</span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase tracking-tight mt-2">НАШИ УСЛУГИ</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Service 1 -->
+        <div class="bg-brandBrown/40 border border-brandBorder p-6 flex flex-col justify-between hover:border-brandGold transition-colors group">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <i data-lucide="scissors" class="w-8 h-8 text-brandGold"></i>
+              <span class="text-xs font-mono text-brandMuted bg-brandDark px-2 py-1 border border-brandBorder">45 МИН</span>
+            </div>
+            <h3 class="font-heading text-xl font-bold uppercase mb-2 group-hover:text-brandGold transition-colors">Мужская стрижка</h3>
+            <p class="text-brandMuted text-sm font-light leading-relaxed mb-6">Классическая или современная стрижка, мытье головы, укладка премиальным средством.</p>
+          </div>
+          <div class="pt-4 border-t border-brandBorder flex justify-between items-center">
+            <span class="text-xs uppercase text-brandMuted">Стоимость</span>
+            <span class="font-heading text-2xl font-bold text-brandGold">1 500 ₽</span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-brandBrown/40 border border-brandBorder p-6 flex flex-col justify-between hover:border-brandGold transition-colors group">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <i data-lucide="user-check" class="w-8 h-8 text-brandGold"></i>
+              <span class="text-xs font-mono text-brandMuted bg-brandDark px-2 py-1 border border-brandBorder">30 МИН</span>
+            </div>
+            <h3 class="font-heading text-xl font-bold uppercase mb-2 group-hover:text-brandGold transition-colors">Оформление бороды</h3>
+            <p class="text-brandMuted text-sm font-light leading-relaxed mb-6">Создание четких контуров, стрижка длины, распаривание и уход за кожей лица маслами.</p>
+          </div>
+          <div class="pt-4 border-t border-brandBorder flex justify-between items-center">
+            <span class="text-xs uppercase text-brandMuted">Стоимость</span>
+            <span class="font-heading text-2xl font-bold text-brandGold">1 000 ₽</span>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-brandBrown/40 border border-brandBorder p-6 flex flex-col justify-between hover:border-brandGold transition-colors group">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <i data-lucide="shield" class="w-8 h-8 text-brandGold"></i>
+              <span class="text-xs font-mono text-brandMuted bg-brandDark px-2 py-1 border border-brandBorder">60 МИН</span>
+            </div>
+            <h3 class="font-heading text-xl font-bold uppercase mb-2 group-hover:text-brandGold transition-colors">Бритье опасной бритвой</h3>
+            <p class="text-brandMuted text-sm font-light leading-relaxed mb-6">Традиционное королевское бритье с горячим компрессом и премиальной косметикой.</p>
+          </div>
+          <div class="pt-4 border-t border-brandBorder flex justify-between items-center">
+            <span class="text-xs uppercase text-brandMuted">Стоимость</span>
+            <span class="font-heading text-2xl font-bold text-brandGold">2 000 ₽</span>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-brandBrown/40 border border-brandBorder p-6 flex flex-col justify-between hover:border-brandGold transition-colors group">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <i data-lucide="sparkles" class="w-8 h-8 text-brandGold"></i>
+              <span class="text-xs font-mono text-brandMuted bg-brandDark px-2 py-1 border border-brandBorder">75 МИН</span>
+            </div>
+            <h3 class="font-heading text-xl font-bold uppercase mb-2 group-hover:text-brandGold transition-colors">Комплекс (Стрижка + Борода)</h3>
+            <p class="text-brandMuted text-sm font-light leading-relaxed mb-6">Полный уход за вашим образом: стрижка волос, моделирование бороды и укладка.</p>
+          </div>
+          <div class="pt-4 border-t border-brandBorder flex justify-between items-center">
+            <span class="text-xs uppercase text-brandMuted">Стоимость</span>
+            <span class="font-heading text-2xl font-bold text-brandGold">2 200 ₽</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Masters Section -->
+    <section id="masters" class="border-t border-brandBorder bg-brandBrown/20 py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-14">
+          <span class="text-brandGold font-mono text-xs tracking-widest uppercase">// КОМАНДА</span>
+          <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase tracking-tight mt-2">НАШИ МАСТЕРА</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Master 1 -->
+          <div class="bg-brandDark border border-brandBorder p-6 hover:border-brandGold transition-colors">
+            <div class="h-64 bg-gradient-to-b from-brandBrown to-brandDark mb-6 flex items-center justify-center border border-brandBorder">
+              <i data-lucide="user" class="w-20 h-20 text-brandMuted/40"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold uppercase text-brandText mb-1">Артем</h3>
+            <p class="text-brandGold text-xs uppercase font-mono tracking-widest mb-3">Top Barber</p>
+            <p class="text-brandMuted text-sm font-light">Специализация: Классические мужские стрижки, идеальные фейды и оформление бород любой сложности.</p>
+          </div>
+
+          <!-- Master 2 -->
+          <div class="bg-brandDark border border-brandBorder p-6 hover:border-brandGold transition-colors">
+            <div class="h-64 bg-gradient-to-b from-brandBrown to-brandDark mb-6 flex items-center justify-center border border-brandBorder">
+              <i data-lucide="user" class="w-20 h-20 text-brandMuted/40"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold uppercase text-brandText mb-1">Виктор</h3>
+            <p class="text-brandGold text-xs uppercase font-mono tracking-widest mb-3">Senior Barber</p>
+            <p class="text-brandMuted text-sm font-light">Специализация: Традиционное бритье опасной бритвой, уход за лицом и удлиненные стрижки.</p>
+          </div>
+
+          <!-- Master 3 -->
+          <div class="bg-brandDark border border-brandBorder p-6 hover:border-brandGold transition-colors">
+            <div class="h-64 bg-gradient-to-b from-brandBrown to-brandDark mb-6 flex items-center justify-center border border-brandBorder">
+              <i data-lucide="user" class="w-20 h-20 text-brandMuted/40"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold uppercase text-brandText mb-1">Даниил</h3>
+            <p class="text-brandGold text-xs uppercase font-mono tracking-widest mb-3">Barber</p>
+            <p class="text-brandMuted text-sm font-light">Специализация: Современные текстурные стрижки, графичные контуры и детские стрижки.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Calculator Section -->
+    <section id="booking" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="max-w-3xl mx-auto bg-brandBrown/30 border border-brandBorder p-6 sm:p-10 relative">
+        <div class="mb-8 text-center">
+          <span class="text-brandGold font-mono text-xs tracking-widest uppercase">// ОНЛАЙН-ЗАПИСЬ</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold uppercase tracking-tight mt-1">КАЛЬКУЛЯТОР ЗАПИСИ</h2>
+          <p class="text-brandMuted text-sm mt-2 font-light">Выберите услугу, удобное время и отправьте заявку в 1 клик</p>
+        </div>
+
+        <form id="bookingForm" onsubmit="return false;" class="space-y-8">
+
+          <!-- Step 1: Select Service -->
+          <div>
+            <label class="block font-heading text-sm uppercase tracking-wider text-brandGold mb-3">
+              1. Выберите услугу *
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="serviceContainer">
+              <button type="button" data-service="Мужская стрижка (1 500 ₽)" class="service-btn text-left p-3.5 border border-brandBorder bg-brandDark text-sm font-medium hover:border-brandGold transition-colors rounded-none">
+                Мужская стрижка — 1 500 ₽
+              </button>
+              <button type="button" data-service="Оформление бороды (1 000 ₽)" class="service-btn text-left p-3.5 border border-brandBorder bg-brandDark text-sm font-medium hover:border-brandGold transition-colors rounded-none">
+                Оформление бороды — 1 000 ₽
+              </button>
+              <button type="button" data-service="Бритье опасной бритвой (2 000 ₽)" class="service-btn text-left p-3.5 border border-brandBorder bg-brandDark text-sm font-medium hover:border-brandGold transition-colors rounded-none">
+                Бритье опасной бритвой — 2 000 ₽
+              </button>
+              <button type="button" data-service="Комплекс (стрижка + борода) (2 200 ₽)" class="service-btn text-left p-3.5 border border-brandBorder bg-brandDark text-sm font-medium hover:border-brandGold transition-colors rounded-none">
+                Комплекс (стрижка + борода) — 2 200 ₽
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Select Date -->
+          <div>
+            <label class="block font-heading text-sm uppercase tracking-wider text-brandGold mb-3">
+              2. Выберите дату *
+            </label>
+            <div class="grid grid-cols-3 gap-3" id="dateContainer">
+              <button type="button" data-date="Сегодня" class="date-btn py-3 border border-brandBorder bg-brandDark text-xs font-mono uppercase hover:border-brandGold transition-colors rounded-none">
+                Сегодня
+              </button>
+              <button type="button" data-date="Завтра" class="date-btn py-3 border border-brandBorder bg-brandDark text-xs font-mono uppercase hover:border-brandGold transition-colors rounded-none">
+                Завтра
+              </button>
+              <button type="button" data-date="Послезавтра" class="date-btn py-3 border border-brandBorder bg-brandDark text-xs font-mono uppercase hover:border-brandGold transition-colors rounded-none">
+                Послезавтра
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Select Time -->
+          <div>
+            <label class="block font-heading text-sm uppercase tracking-wider text-brandGold mb-3">
+              3. Выберите время *
+            </label>
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2" id="timeContainer">
+              <button type="button" data-time="10:00" class="time-btn py-2.5 border border-brandBorder bg-brandDark text-xs font-mono hover:border-brandGold transition-colors rounded-none">10:00</button>
+              <button type="button" data-time="12:00" class="time-btn py-2.5 border border-brandBorder bg-brandDark text-xs font-mono hover:border-brandGold transition-colors rounded-none">12:00</button>
+              <button type="button" data-time="14:00" class="time-btn py-2.5 border border-brandBorder bg-brandDark text-xs font-mono hover:border-brandGold transition-colors rounded-none">14:00</button>
+              <button type="button" data-time="16:00" class="time-btn py-2.5 border border-brandBorder bg-brandDark text-xs font-mono hover:border-brandGold transition-colors rounded-none">16:00</button>
+              <button type="button" data-time="18:00" class="time-btn py-2.5 border border-brandBorder bg-brandDark text-xs font-mono hover:border-brandGold transition-colors rounded-none">18:00</button>
+              <button type="button" data-time="20:00" class="time-btn py-2.5 border border-brandBorder bg-brandDark text-xs font-mono hover:border-brandGold transition-colors rounded-none">20:00</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Contact Info -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-heading text-xs uppercase tracking-wider text-brandMuted mb-2" for="clientName">
+                Ваше Имя *
+              </label>
+              <input type="text" id="clientName" placeholder="Александр" class="w-full bg-brandDark border border-brandBorder px-4 py-3 text-sm text-brandText placeholder-neutral-600 focus:outline-none focus:border-brandGold rounded-none">
+            </div>
+            <div>
+              <label class="block font-heading text-xs uppercase tracking-wider text-brandMuted mb-2" for="clientPhone">
+                Телефон *
+              </label>
+              <input type="tel" id="clientPhone" placeholder="+7 (999) 000-00-00" class="w-full bg-brandDark border border-brandBorder px-4 py-3 text-sm text-brandText placeholder-neutral-600 focus:outline-none focus:border-brandGold rounded-none">
+            </div>
+          </div>
+
+          <!-- Summary Box -->
+          <div class="bg-brandDark p-4 border border-brandBorder text-xs text-brandMuted font-mono space-y-1">
+            <div class="flex justify-between">
+              <span>Услуга:</span>
+              <span id="summaryService" class="text-brandText font-bold">Не выбрана</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Дата и время:</span>
+              <span id="summaryDateTime" class="text-brandText font-bold">Не выбраны</span>
+            </div>
+          </div>
+
+          <!-- Submit Messenger Buttons -->
+          <div class="space-y-3 pt-2">
+            <button id="btnTelegram" disabled class="w-full bg-sky-700/50 text-neutral-400 border border-sky-800 font-heading font-bold text-sm uppercase py-4 px-6 rounded-none flex items-center justify-center gap-2 transition-all cursor-not-allowed">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Записаться через Telegram
+            </button>
+            <button id="btnWhatsApp" disabled class="w-full bg-emerald-800/50 text-neutral-400 border border-emerald-900 font-heading font-bold text-sm uppercase py-4 px-6 rounded-none flex items-center justify-center gap-2 transition-all cursor-not-allowed">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              Записаться через WhatsApp
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer / Contacts -->
+  <footer id="contacts" class="border-t border-brandBorder bg-brandDark py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <!-- Col 1: Brand -->
+        <div>
+          <a href="#" class="font-heading text-2xl font-bold tracking-wider text-brandText uppercase block mb-4">
+            IRON & WOOD<span class="text-brandGold">.</span>
+          </a>
+          <p class="text-brandMuted text-sm font-light leading-relaxed max-w-sm">
+            Мужской барбершоп с характером. Атмосфера, стиль и безупречный сервис в центре города.
+          </p>
+        </div>
+
+        <!-- Col 2: Info -->
+        <div>
+          <h4 class="font-heading text-base uppercase text-brandGold tracking-widest mb-4">Контакты</h4>
+          <ul class="space-y-3 text-sm text-brandMuted font-light">
+            <li class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brandGold"></i>
+              Москва, ул. Кузнецкий Мост, 12
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-brandGold"></i>
+              +7 (999) 000-00-00
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="clock" class="w-4 h-4 text-brandGold"></i>
+              Пн — Вс: 10:00 — 22:00
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div>
+          <h4 class="font-heading text-base uppercase text-brandGold tracking-widest mb-4">Мы в соцсетях</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="p-3 bg-brandBrown/50 border border-brandBorder text-brandText hover:border-brandGold hover:text-brandGold transition-colors">
+              <i data-lucide="send" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="p-3 bg-brandBrown/50 border border-brandBorder text-brandText hover:border-brandGold hover:text-brandGold transition-colors">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="p-3 bg-brandBrown/50 border border-brandBorder text-brandText hover:border-brandGold hover:text-brandGold transition-colors">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-brandBorder pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-brandMuted font-mono gap-4">
+        <div>&copy; 2026 IRON & WOOD BARBERSHOP. ALL RIGHTS RESERVED.</div>
+        <div>МУЖСКИЙ СТИЛЬ БЕЗ КОМПРОМИССОВ</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script>
+    // State storage
+    const bookingState = {
+      service: '',
+      date: '',
+      time: '',
+      name: '',
+      phone: ''
+    };
+
+    // DOM Elements
+    const serviceButtons = document.querySelectorAll('.service-btn');
+    const dateButtons = document.querySelectorAll('.date-btn');
+    const timeButtons = document.querySelectorAll('.time-btn');
+    const nameInput = document.getElementById('clientName');
+    const phoneInput = document.getElementById('clientPhone');
+
+    const summaryService = document.getElementById('summaryService');
+    const summaryDateTime = document.getElementById('summaryDateTime');
+
+    const btnTelegram = document.getElementById('btnTelegram');
+    const btnWhatsApp = document.getElementById('btnWhatsApp');
+
+    // Helper: Select Single Item in a Group
+    function selectGroupItem(buttons, selectedBtn, activeClass = 'border-brandGold bg-brandGold text-black font-semibold') {
+      buttons.forEach(btn => {
+        btn.classList.remove('border-brandGold', 'bg-brandGold', 'text-black', 'font-semibold');
+        btn.classList.add('border-brandBorder', 'bg-brandDark', 'text-brandText');
+      });
+      selectedBtn.classList.remove('border-brandBorder', 'bg-brandDark', 'text-brandText');
+      selectedBtn.classList.add('border-brandGold', 'bg-brandGold', 'text-black', 'font-semibold');
+    }
+
+    // Step 1: Service selection
+    serviceButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        bookingState.service = btn.getAttribute('data-service');
+        selectGroupItem(serviceButtons, btn);
+        updateSummaryAndState();
+      });
+    });
+
+    // Step 2: Date selection
+    dateButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        bookingState.date = btn.getAttribute('data-date');
+        selectGroupItem(dateButtons, btn);
+        updateSummaryAndState();
+      });
+    });
+
+    // Step 3: Time selection
+    timeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        bookingState.time = btn.getAttribute('data-time');
+        selectGroupItem(timeButtons, btn);
+        updateSummaryAndState();
+      });
+    });
+
+    // Step 4: Name & Phone inputs
+    nameInput.addEventListener('input', (e) => {
+      bookingState.name = e.target.value.trim();
+      updateSummaryAndState();
+    });
+
+    phoneInput.addEventListener('input', (e) => {
+      bookingState.phone = e.target.value.trim();
+      updateSummaryAndState();
+    });
+
+    // Update Summary & Enable/Disable Buttons
+    function updateSummaryAndState() {
+      // Summary updates
+      summaryService.textContent = bookingState.service || 'Не выбрана';
+      summaryDateTime.textContent = (bookingState.date || bookingState.time)
+        ? `${bookingState.date || '—'} в ${bookingState.time || '—'}`
+        : 'Не выбраны';
+
+      // Check if form is fully valid
+      const isValid = bookingState.service && bookingState.date && bookingState.time && bookingState.name && bookingState.phone;
+
+      if (isValid) {
+        // Enable Telegram Button
+        btnTelegram.disabled = false;
+        btnTelegram.className = "w-full bg-sky-600 hover:bg-sky-500 text-white font-heading font-bold text-sm uppercase py-4 px-6 rounded-none flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg";
+
+        // Enable WhatsApp Button
+        btnWhatsApp.disabled = false;
+        btnWhatsApp.className = "w-full bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-sm uppercase py-4 px-6 rounded-none flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg";
+      } else {
+        // Disable Telegram
+        btnTelegram.disabled = true;
+        btnTelegram.className = "w-full bg-sky-700/50 text-neutral-400 border border-sky-800 font-heading font-bold text-sm uppercase py-4 px-6 rounded-none flex items-center justify-center gap-2 transition-all cursor-not-allowed";
+
+        // Disable WhatsApp
+        btnWhatsApp.disabled = true;
+        btnWhatsApp.className = "w-full bg-emerald-800/50 text-neutral-400 border border-emerald-900 font-heading font-bold text-sm uppercase py-4 px-6 rounded-none flex items-center justify-center gap-2 transition-all cursor-not-allowed";
+      }
+    }
+
+    // Generate Pre-filled Message Text
+    function buildMessageText() {
+      return `Здравствуйте! Хочу записаться на ${bookingState.service} на ${bookingState.date} в ${bookingState.time}. Меня зовут ${bookingState.name}, телефон ${bookingState.phone}`;
+    }
+
+    // Telegram Handler
+    btnTelegram.addEventListener('click', () => {
+      if (btnTelegram.disabled) return;
+      const text = encodeURIComponent(buildMessageText());
+      // Direct share link format
+      window.open(`https://t.me/share/url?url=&text=${text}`, '_blank');
+    });
+
+    // WhatsApp Handler
+    btnWhatsApp.addEventListener('click', () => {
+      if (btnWhatsApp.disabled) return;
+      const text = encodeURIComponent(buildMessageText());
+      // Test manager phone number placeholder
+      window.open(`https://wa.me/79990000000?text=${text}`, '_blank');
+    });
+
+    // Init Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
